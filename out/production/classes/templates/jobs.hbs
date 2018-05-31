@@ -1,0 +1,13 @@
+{{#partial "content"}}
+    <h1>All Job Listings</h1>
+
+    {{#if jobs}}
+        {{#each jobs}}
+            <p><a href="jobs/{{id}}">{{title}}</a><span> {{company.name}}</span></p>
+        {{/each}}
+    {{else}}
+        <h5>There are currently no listings.</h5>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

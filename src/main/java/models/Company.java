@@ -1,14 +1,17 @@
+package models;
+
 import java.util.ArrayList;
 
 public class Company {
     private String name;
-    private ArrayList<Job> openings = new ArrayList<>();
+    private ArrayList<Job> openings;
     private int id;
 
     private static ArrayList<Company> instances = new ArrayList<>();
 
     public Company(String name) {
         this.name = name;
+        this.openings = new ArrayList<>();
         instances.add(this);
         this.id = instances.size();
     }
@@ -40,4 +43,6 @@ public class Company {
     public void setOpenings(Job opening) {
         this.openings.add(opening);
     }
+
+
 }

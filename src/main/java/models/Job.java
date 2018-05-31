@@ -1,3 +1,5 @@
+package models;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +17,13 @@ public class Job {
 
     private static ArrayList<Job> instances = new ArrayList<>();
 
-    public Job(String title, ArrayList<String> qualifications, Company company, int salary) {
+    public Job(String title, String qualifications, String company, int salary) {
         this.title = title;
-        this.qualifications = qualifications;
-        this.company = company;
+        this.qualifications = new ArrayList<String>(){{
+            add(qualifications);
+        }};
+        this.company = new Company(company);
+        this.company.setOpenings(this);
         this.salary = salary;
         this.published = false;
         this.createdAt = LocalDateTime.now();
@@ -84,6 +89,10 @@ public class Job {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void deleteJob() {
+        instances.remove(this.id - 1);
     }
 }
 

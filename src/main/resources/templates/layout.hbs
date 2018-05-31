@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Job Wizard{{/block}}</title>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Job Wizard</a>
+    <span class="navbar-text">
+      <small>A journey into jobs!</small>
+    </span>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="/applicants">Job Creators</a></li>
+        <li class="nav-item"><a class="nav-link" href="/jobs">Job Seekers</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <!--begin main template-->
+
+    <div class="col-md-12">
+        {{#block "content"}}
+        {{/block}}
+
+    </div>
+</div>
+
+<!--end main template-->
+{{#block "footer"}}
+    <footer class="footer">
+        <div class="container">
+            <a class="nav-link" href="jobs/new">Add Job</a>
+        </div>
+    </footer>
+    </body>
+    </html>
+{{/block}}

@@ -1,3 +1,7 @@
+package models;
+
+import models.Company;
+import models.Job;
 import org.junit.Test;
 
 import java.util.ArrayList;
